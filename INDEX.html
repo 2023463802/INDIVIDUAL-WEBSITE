@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>HOMEPAGE</title>
+  <style>
+
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #FFC9DE;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #FFF8FF;
+}
+
+nav {
+  background: #FF69B4;
+  padding: 10px;
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 22px;
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 22px;
+  font-weight: bold;
+  transition: background 0.25s, color 0.25s;
+}
+
+nav > a:hover {
+    color:#FF69B4;
+    border-bottom:2px solid #FFB4A2;
+    text-shadow:0 0 8px #02010A;
+}
+
+.content {
+  animation: fadeUp 2s ease;
+  animation: floatTiny 3.6s ease-in-out infinite;
+}
+
+/* small floating sparkle animation for the whole hero */
+@keyframes floatTiny {
+  0% { transform: translateY(0) scale(1); opacity:0.92; }
+  50% { transform: translateY(-6px) scale(1.08); opacity:1; }
+  100% { transform: translateY(0) scale(1); opacity:0.92; }
+}
+
+/* responsive: stack on small screens */
+@media (max-width:900px){
+  .hero-card{
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 18px;
+  }
+  .hero-left { padding: 0; }
+  .hero-right { margin-top: 6px; }
+  .photo-frame { width: 210px; height: 300px; margin: 0 auto; }
+  .hero-title{ font-size: 28px; }
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+  50% { transform: translateY(-10px); filter: drop-shadow(0 0 18px rgba(255,170,240,0.8)); }
+  100% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+}
+
+.hero-heart { animation: floatGlow 5s ease-in-out infinite; }
+
+</style>
+
+</head>
+<body>
+  <h1>𓂃˖˳·˖ ִֶָ ⋆🌷͙⋆ ִֶָ˖·˳˖𓂃 ִֶָ𝓐𝓷𝓲𝓮𝓼'𝓼 𝓟𝓮𝓻𝓼𝓸𝓷𝓪𝓵 𝓦𝓮𝓫𝓼𝓲𝓽𝓮
+𓂃˖˳·˖ ִֶָ ⋆🌷͙⋆ ִֶָ˖·˳˖𓂃 ִֶָ</h1>
+
+  <nav>
+    <a href="INDEX.html">Home</a>
+    <a href="ABOUTME.html">About Me</a>
+    <a href="FAMILY.html">Family</a>
+    <a href="EDUCATION.html">Education</a>
+    <a href="EXPERIENCE.html">Experience</a>
+    <a href="FRIENDS.html">Friends</a>
+    <a href="FAVOURITE.html">Favourites</a>
+    <a href="GALLERY.html">Gallery</a>
+  </nav>
+
+  
+<!-- Hero (no buttons) -->
+<section class="cute-pastel-hero" aria-labelledby="hero-title">
+  <div class="hero-bg-decor"></div>
+
+  <div class="hero-card" role="region" aria-label="Welcome hero">
+    
+    <div class="hero-left">
+      <h1 id="hero-title" class="hero-title">🫧𝓢𝓸𝓯𝓽 𝓟𝓲𝓷𝓴 𝓤𝓷𝓲𝓿𝓮𝓻𝓼𝓮🫧</h1>
+
+      <div class="hero-sparkles" aria-hidden="true">
+        <span>✦</span><span>✦</span><span>✦</span>
+      </div>
+
+      <p class="hero-sub">
+        (っ◔◡◔)っ ♥ A tiny corner where I keep my stories, memories and the little things that make life soft. ♥
+      </p>
+
+      <p class="hero-sub">
+        ʟᴇᴛ ʏᴏᴜʀ ᴀᴜʀᴀ ɢʟᴏᴡ ɪɴ ᴘᴀꜱᴛᴇʟ ʜᴀʀᴍᴏɴʏ 𝄞⨾𓍢ִ໋.
+      </p>
+    </div>
+
+    <div class="hero-right">
+      <!-- Heart-shaped frame via SVG clipPath -->
+      <figure class="heart-frame" aria-hidden="false">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <clipPath id="heartClip">
+              <path d="M50 91s-34-20-44-34c-9-12 1-29 14-32 10-2 20 5 30 13 10-8 20-15 30-13 13 3 23 20 14 32-10 14-44 34-44 34z"/>
+            </clipPath>
+          </defs>
+
+          <g class="heart-glow">
+            <ellipse cx="50" cy="50" rx="40" ry="40" fill="rgba(235,150,210,0.12)"/>
+          </g>
+
+          <image href="wai.jpg" x="0" y="0" width="100" height="100"
+                 preserveAspectRatio="xMidYMid slice" clip-path="url(#heartClip)"></image>
+
+          <path d="M50 91s-34-20-44-34c-9-12 1-29 14-32 10-2 20 5 30 13 10-8 20-15 30-13 13 3 23 20 14 32-10 14-44 34-44 34z"
+                fill="none" stroke="rgba(255,160,210,0.25)" stroke-width="2"/>
+        </svg>
+
+        <div class="sticker top-left"></div>
+        <div class="sticker top-right"></div>
+      </figure>
+    </div>
+
+  </div>
+
+
+</section>
+  
+</div>
+</main>
+
+  <footer class="footer">
+    <p>&copy; 2025 𝘾𝙧𝙖𝙛𝙩𝙚𝙙 𝙬𝙞𝙩𝙝 𝙨𝙤𝙛𝙩𝙣𝙚𝙨𝙨 𝙖𝙣𝙙 𝙡𝙞𝙩𝙩𝙡𝙚 𝙟𝙤𝙮𝙨 𝙗𝙮 𝙉𝙪𝙧 𝘼𝙣𝙞𝙚𝙨 𝘽𝙖𝙩𝙧𝙞𝙚𝙨𝙮𝙖 𝘽𝙩 𝙍𝙞𝙟𝙖𝙡 𝘼𝙗𝙙𝙪𝙡𝙡𝙖𝙝⋅˚₊‧ ୨୧ ‧₊˚ ⋅</p>
+    
+  </footer>
+
+</body>
+</html>

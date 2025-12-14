@@ -1,0 +1,518 @@
+/* --------------------------------------------------
+   GENERAL STYLING
+-------------------------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFC9DE;
+  margin: 0;
+  padding: 0;
+   animation: float 4s ease-in-out infinite;
+
+}
+
+
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #FFF8FF;
+   animation: float 4s ease-in-out infinite;
+
+}
+
+/* --------------------------------------------------
+   NAVIGATION
+-------------------------------------------------- */
+nav {
+  background: #FF69B4;
+  padding: 10px;
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 22px;
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 22px;
+  font-weight: bold;
+  transition: background 0.25s, color 0.25s;
+}
+
+nav > a:hover {
+    color:#FF69B4;
+    border-bottom:2px solid #FFB4A2;
+    text-shadow:0 0 8px #02010A;
+}
+
+/* Cute Pastel Hero Section (Option A) */
+
+/* --- overall hero container --- */
+.cute-pastel-hero{
+  position: relative;
+  padding: 48px 20px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #f8e9f2 0%, #efe1f9 40%, #f3e8ff 100%);
+  overflow: hidden;
+}
+
+/* subtle decorative blurred shapes behind */
+.cute-pastel-hero .hero-bg-decor{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 250px at 10% 10%, rgba(255,200,240,0.12), transparent 12%),
+    radial-gradient(500px 300px at 90% 80%, rgba(200,180,255,0.10), transparent 12%);
+  pointer-events: none;
+  filter: blur(18px);
+}
+
+/* the centered card */
+.hero-card{
+  width: min(1100px, 94%);
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: center;
+  padding: 34px;
+  border-radius: 20px;
+  background: #FFB8E5
+;
+  box-shadow:
+    0 8px 30px rgba(120,40,140,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* left column text */
+.hero-left { padding-right: 8px; text-align: left; }
+
+.hero-title{
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #FF5CC3;
+  font-size: 34px;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.6px;
+  text-shadow: 0 2px 10px rgba(150,60,150,0.12);
+}
+
+/* sparkles row */
+.hero-sparkles{
+  color: #ffcee9;
+  font-size: 14px;
+  margin-bottom: 12px;
+  display: inline-block;
+  opacity: 0.95;
+}
+.hero-sparkles span{
+  margin-right: 8px;
+  display:inline-block;
+  transform-origin:center;
+  animation: floatTiny 3.6s ease-in-out infinite;
+}
+.hero-sparkles span:nth-child(2){ animation-delay: 0.4s; }
+.hero-sparkles span:nth-child(3){ animation-delay: 0.9s; }
+
+/* subtitle */
+.hero-sub{
+  color: #54325b;
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* small link under subtitle */
+.muted-link {
+  color: #8b3aa8;
+  text-decoration: underline dotted;
+  font-style: italic;
+}
+.muted-link:hover { color: #b85bd0; }
+
+/* right column photo frame */
+.hero-right { display:flex; justify-content:center; align-items:center; }
+
+.photo-frame{
+  width: 260px;
+  height: 500px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  box-shadow:
+     0 18px 40px rgba(160,70,180,0.12),
+     inset 0 0 18px rgba(255,220,255,0.06);
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  transform: translateY(0);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display:block;
+}
+
+/* sticky tape decorative */
+.sticky-tape{
+  position:absolute;
+  width:56px;
+  height:16px;
+  background: linear-gradient(90deg,#fff6f9,#ffdff4);
+  border-radius:4px;
+  transform: rotate(-6deg);
+  top:8px;
+  left:12px;
+  opacity:0.95;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+.sticky-tape.top-right{ right:12px; left:auto; transform: rotate(6deg); }
+
+/* hover effect */
+.photo-frame:hover{
+  transform: translateY(-6px);
+  box-shadow:
+   0 26px 60px rgba(160,70,180,0.18),
+   inset 0 0 22px rgba(255,220,255,0.08);
+}
+
+/* small floating sparkle animation for the whole hero */
+@keyframes floatTiny {
+  0% { transform: translateY(0) scale(1); opacity:0.92; }
+  50% { transform: translateY(-6px) scale(1.08); opacity:1; }
+  100% { transform: translateY(0) scale(1); opacity:0.92; }
+}
+
+/* responsive: stack on small screens */
+@media (max-width:900px){
+  .hero-card{
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 18px;
+  }
+  .hero-left { padding: 0; }
+  .hero-right { margin-top: 6px; }
+  .photo-frame { width: 210px; height: 300px; margin: 0 auto; }
+  .hero-title{ font-size: 28px; }
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+  50% { transform: translateY(-10px); filter: drop-shadow(0 0 18px rgba(255,170,240,0.8)); }
+  100% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+}
+
+.hero-heart { animation: floatGlow 5s ease-in-out infinite; }
+
+/* ===== Add these fixes ===== */
+
+/* 1) Define float keyframes (dipanggil oleh body & h1) */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* 2) Remove duplicate .hero-heart rules conflict by defining once */
+.hero-heart {
+  position: absolute;
+  right: 60px;
+  top: 40px;
+  width: 220px;
+  height: 220px;
+  display: block;
+  transform-origin: center;
+  z-index: 8;
+  pointer-events: none;
+  /* combine movement + glow as two animations (names must exist) */
+  animation: floatHeart 6s ease-in-out infinite,
+             floatGlow 5s ease-in-out infinite;
+}
+
+/* Ensure floatGlow exists (you have it already) - kept for completeness */
+@keyframes floatGlow {
+  0%  { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+  50% { transform: translateY(-10px); filter: drop-shadow(0 0 18px rgba(255,170,240,0.8)); }
+  100%{ transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+}
+
+/* Ensure floatHeart exists (you had floatHeart defined already; keep it) */
+@keyframes floatHeart {
+  0%   { transform: translateY(0) rotate(-2deg) scale(1); }
+  50%  { transform: translateY(-8px) rotate(2deg) scale(1.02); }
+  100% { transform: translateY(0) rotate(-2deg) scale(1); }
+}
+
+/* 3) Optional: if using an <image> inside SVG, target explicitly for animation */
+.heart-frame image,
+.heart-frame .heart-photo {
+  animation: heartFloat 6s ease-in-out infinite,
+             heartPulseGlow 3.8s ease-in-out infinite;
+}
+
+/* define the heart animations if not already present */
+@keyframes heartFloat {
+  0%   { transform: translateY(0) scale(1) rotate(0deg); }
+  50%  { transform: translateY(-8px) scale(1.02) rotate(1deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes heartPulseGlow {
+  0% { filter: drop-shadow(0 8px 18px rgba(255,130,180,0.18)); }
+  50% { filter: drop-shadow(0 20px 38px rgba(255,140,190,0.46)); }
+  100% { filter: drop-shadow(0 8px 18px rgba(255,130,180,0.18)); }
+}
+
+/* 4) Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body, h1, .hero-heart, .heart-frame image, .heart-frame .heart-photo {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Footer styling */
+.footer {
+    background: #FF69B4;
+    color: #FFC9DE;
+    text-align: center;
+    padding: 15px 0;
+    position: static;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    font-size: 0.9em;
+    border-top: 3px solid #FFC9DE;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    margin-top: 110px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ===== Cute Carousel (paste into styles.css) ===== */
+:root{
+  --cc-bg: #ffeef6;
+  --cc-card: #fffafc;
+  --cc-accent: #ffb6d9;
+  --cc-ink: #5b2b42;
+  --cc-muted: #9b6f86;
+  --cc-radius: 18px;
+  --cc-w: 520px;
+  --cc-gap: 18px;
+}
+
+/* container */
+.cute-carousel {
+  padding: 28px 16px 48px;
+  background: linear-gradient(180deg, rgba(255,241,246,0.6), rgba(255,245,250,0.4));
+  border-radius: 14px;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--cc-ink);
+  position: relative;
+  overflow: visible;
+}
+
+/* title */
+.cc-title {
+  font-size: 22px;
+  margin: 6px 0 18px;
+  color: var(--cc-ink);
+  letter-spacing: 0.2px;
+}
+
+/* hide native radios */
+.cute-carousel input[type="radio"] { display: none; }
+
+/* wrapper & slides container */
+.cc-wrap {
+  width: 100%;
+  max-width: calc(var(--cc-w) + 40px);
+  margin: 0 auto;
+  position: relative;
+  height: 380px; /* fixed height to keep layout stable */
+  perspective: 1200px;
+}
+
+/* each slide (stacked) */
+.cc-slide {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: var(--cc-w);
+  transform: translateX(-50%) scale(.96);
+  transition: transform .6s cubic-bezier(.2,.9,.2,1), opacity .6s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* visible slide when radio checked */
+#cc-1:checked ~ .cc-wrap .cc-1,
+#cc-2:checked ~ .cc-wrap .cc-2,
+#cc-3:checked ~ .cc-wrap .cc-3,
+#cc-4:checked ~ .cc-wrap .cc-4 {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+  z-index: 4;
+}
+
+/* card inside slide */
+.cc-card {
+  background: linear-gradient(180deg, var(--cc-card), #fff0f6);
+  border-radius: var(--cc-radius);
+  padding: 14px;
+  box-shadow: 0 14px 36px rgba(107,52,80,0.08), 0 0 18px rgba(255,150,200,0.03);
+  border: 1px solid rgba(107,52,80,0.06);
+  overflow: hidden;
+}
+
+/* media */
+.cc-media {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: block;
+  background: linear-gradient(180deg, #fff0f4, #ffdff4);
+  margin-bottom: 12px;
+}
+.cc-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* content texts */
+.cc-content { text-align: left; padding: 0 6px 8px; }
+.cc-content h3 { margin: 0 0 6px; font-size: 18px; color: var(--cc-ink); }
+.fav-desc { margin: 0; color: #6b3d53; font-size: 14px; }
+.fav-list { margin: 6px 0 0 18px; color: #6b3d53; }
+
+/* dots (controls) */
+.cc-controls {
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-top: 14px;
+  position: relative;
+  z-index: 10;
+}
+.cc-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(180deg,#ffe9f4,#ffd6ea);
+  border: 2px solid rgba(107,52,80,0.07);
+  display:inline-block;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.cc-dot:hover { transform: scale(1.08); box-shadow: 0 6px 14px rgba(255,150,200,0.12); }
+
+/* when a specific radio is checked, highlight corresponding dot */
+#cc-1:checked ~ .cc-controls label[for="cc-1"],
+#cc-2:checked ~ .cc-controls label[for="cc-2"],
+#cc-3:checked ~ .cc-controls label[for="cc-3"],
+#cc-4:checked ~ .cc-controls label[for="cc-4"] {
+  transform: scale(1.22);
+  box-shadow: 0 10px 30px rgba(255,120,180,0.14);
+}
+
+/* arrows (stylish but simple) */
+.cc-arrows {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(50% - 22px);
+  width: calc(var(--cc-w) + 40px);
+  max-width: calc(100% - 48px);
+  display:flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.cc-arrow {
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 26px;
+  color: white;
+  background: linear-gradient(180deg,#ff9fc8,#ff79b3);
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(255,150,200,0.16);
+  border: 1px solid rgba(255,255,255,0.4);
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.96;
+}
+.cc-arrow:hover { transform: translateY(-3px); }
+
+/* Make arrows switch slides (assign correct for attributes) */
+/* We give both prev/next to the visible radio by mapping labels to radios.
+   For better UX on all slides, include multiple labels that target each radio. */
+.cc-arrows .prev[for="cc-1"], .cc-arrows .next[for="cc-1"] { display:none; }
+
+/* Accessibility: small muted caption */
+.small-muted { color: var(--cc-muted); font-size:12px; margin-top:6px; }
+
+/* responsive */
+@media (max-width:720px) {
+  :root { --cc-w: 360px; }
+  .cc-wrap { height: 360px; }
+  .cc-media { height: 240px; }
+  .cc-card { padding: 12px; }
+  .cc-arrow { width:40px; height:40px; font-size:22px; }
+}
+
+.cc-card {
+  transition: box-shadow .35s ease, transform .25s ease;
+}
+
+.cc-card:hover {
+  box-shadow:
+    0 12px 40px rgba(255,150,200,0.32),
+    0 0 30px rgba(255,120,190,0.4),
+    0 0 60px rgba(255,160,220,0.35);
+  transform: translateY(-4px);
+}
+
+/* Hide all arrows by default */
+.cc-arrows label { display: none; }
+
+/* Show correct arrows when each slide is active */
+#cc-1:checked ~ .cc-arrows .cc-prev-1,
+#cc-1:checked ~ .cc-arrows .cc-next-1 { display: inline-flex; }
+
+#cc-2:checked ~ .cc-arrows .cc-prev-2,
+#cc-2:checked ~ .cc-arrows .cc-next-2 { display: inline-flex; }
+
+#cc-3:checked ~ .cc-arrows .cc-prev-3,
+#cc-3:checked ~ .cc-arrows .cc-next-3 { display: inline-flex; }
+
+#cc-4:checked ~ .cc-arrows .cc-prev-4,
+#cc-4:checked ~ .cc-arrows .cc-next-4 { display: inline-flex; }
+
+
+.cc-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* penting: crop cantik dalam frame */
+  border-radius: 12px; /* sama dengan frame */
+  display: block;

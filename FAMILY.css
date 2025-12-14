@@ -1,0 +1,442 @@
+/* --------------------------------------------------
+   GENERAL STYLING
+-------------------------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFC9DE;
+  margin: 0;
+  padding: 0;
+   animation: float 4s ease-in-out infinite;
+
+}
+
+
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #FFF8FF;
+   animation: float 4s ease-in-out infinite;
+
+}
+
+/* --------------------------------------------------
+   NAVIGATION
+-------------------------------------------------- */
+nav {
+  background: #FF69B4;
+  padding: 10px;
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 22px;
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 22px;
+  font-weight: bold;
+  transition: background 0.25s, color 0.25s;
+}
+
+nav > a:hover {
+    color:#FF69B4;
+    border-bottom:2px solid #FFB4A2;
+    text-shadow:0 0 8px #02010A;
+}
+
+/* Cute Pastel Hero Section (Option A) */
+
+/* --- overall hero container --- */
+.cute-pastel-hero{
+  position: relative;
+  padding: 48px 20px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #f8e9f2 0%, #efe1f9 40%, #f3e8ff 100%);
+  overflow: hidden;
+}
+
+/* subtle decorative blurred shapes behind */
+.cute-pastel-hero .hero-bg-decor{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 250px at 10% 10%, rgba(255,200,240,0.12), transparent 12%),
+    radial-gradient(500px 300px at 90% 80%, rgba(200,180,255,0.10), transparent 12%);
+  pointer-events: none;
+  filter: blur(18px);
+}
+
+/* the centered card */
+.hero-card{
+  width: min(1100px, 94%);
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: center;
+  padding: 34px;
+  border-radius: 20px;
+  background: #FFB8E5;
+;
+  box-shadow:
+    0 8px 30px rgba(120,40,140,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* left column text */
+.hero-left { padding-right: 8px; text-align: left; }
+
+.hero-title{
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #FF5CC3;
+  font-size: 34px;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.6px;
+  text-shadow: 0 2px 10px rgba(150,60,150,0.12);
+}
+
+/* sparkles row */
+.hero-sparkles{
+  color: #ffcee9;
+  font-size: 14px;
+  margin-bottom: 12px;
+  display: inline-block;
+  opacity: 0.95;
+}
+.hero-sparkles span{
+  margin-right: 8px;
+  display:inline-block;
+  transform-origin:center;
+  animation: floatTiny 3.6s ease-in-out infinite;
+}
+.hero-sparkles span:nth-child(2){ animation-delay: 0.4s; }
+.hero-sparkles span:nth-child(3){ animation-delay: 0.9s; }
+
+/* subtitle */
+.hero-sub{
+  color: #54325b;
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* small link under subtitle */
+.muted-link {
+  color: #8b3aa8;
+  text-decoration: underline dotted;
+  font-style: italic;
+}
+.muted-link:hover { color: #b85bd0; }
+
+/* right column photo frame */
+.hero-right { display:flex; justify-content:center; align-items:center; }
+
+.photo-frame{
+  width: 260px;
+  height: 500px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  box-shadow:
+     0 18px 40px rgba(160,70,180,0.12),
+     inset 0 0 18px rgba(255,220,255,0.06);
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  transform: translateY(0);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display:block;
+}
+
+/* sticky tape decorative */
+.sticky-tape{
+  position:absolute;
+  width:56px;
+  height:16px;
+  background: linear-gradient(90deg,#fff6f9,#ffdff4);
+  border-radius:4px;
+  transform: rotate(-6deg);
+  top:8px;
+  left:12px;
+  opacity:0.95;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+.sticky-tape.top-right{ right:12px; left:auto; transform: rotate(6deg); }
+
+/* hover effect */
+.photo-frame:hover{
+  transform: translateY(-6px);
+  box-shadow:
+   0 26px 60px rgba(160,70,180,0.18),
+   inset 0 0 22px rgba(255,220,255,0.08);
+}
+
+/* small floating sparkle animation for the whole hero */
+@keyframes floatTiny {
+  0% { transform: translateY(0) scale(1); opacity:0.92; }
+  50% { transform: translateY(-6px) scale(1.08); opacity:1; }
+  100% { transform: translateY(0) scale(1); opacity:0.92; }
+}
+
+/* responsive: stack on small screens */
+@media (max-width:900px){
+  .hero-card{
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 18px;
+  }
+  .hero-left { padding: 0; }
+  .hero-right { margin-top: 6px; }
+  .photo-frame { width: 210px; height: 300px; margin: 0 auto; }
+  .hero-title{ font-size: 28px; }
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+  50% { transform: translateY(-10px); filter: drop-shadow(0 0 18px rgba(255,170,240,0.8)); }
+  100% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+}
+
+.hero-heart { animation: floatGlow 5s ease-in-out infinite; }
+
+/* ===== Add these fixes ===== */
+
+/* 1) Define float keyframes (dipanggil oleh body & h1) */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* 2) Remove duplicate .hero-heart rules conflict by defining once */
+.hero-heart {
+  position: absolute;
+  right: 60px;
+  top: 40px;
+  width: 220px;
+  height: 220px;
+  display: block;
+  transform-origin: center;
+  z-index: 8;
+  pointer-events: none;
+  /* combine movement + glow as two animations (names must exist) */
+  animation: floatHeart 6s ease-in-out infinite,
+             floatGlow 5s ease-in-out infinite;
+}
+
+/* Ensure floatGlow exists (you have it already) - kept for completeness */
+@keyframes floatGlow {
+  0%  { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+  50% { transform: translateY(-10px); filter: drop-shadow(0 0 18px rgba(255,170,240,0.8)); }
+  100%{ transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+}
+
+/* Ensure floatHeart exists (you had floatHeart defined already; keep it) */
+@keyframes floatHeart {
+  0%   { transform: translateY(0) rotate(-2deg) scale(1); }
+  50%  { transform: translateY(-8px) rotate(2deg) scale(1.02); }
+  100% { transform: translateY(0) rotate(-2deg) scale(1); }
+}
+
+/* 3) Optional: if using an <image> inside SVG, target explicitly for animation */
+.heart-frame image,
+.heart-frame .heart-photo {
+  animation: heartFloat 6s ease-in-out infinite,
+             heartPulseGlow 3.8s ease-in-out infinite;
+}
+
+/* define the heart animations if not already present */
+@keyframes heartFloat {
+  0%   { transform: translateY(0) scale(1) rotate(0deg); }
+  50%  { transform: translateY(-8px) scale(1.02) rotate(1deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes heartPulseGlow {
+  0% { filter: drop-shadow(0 8px 18px rgba(255,130,180,0.18)); }
+  50% { filter: drop-shadow(0 20px 38px rgba(255,140,190,0.46)); }
+  100% { filter: drop-shadow(0 8px 18px rgba(255,130,180,0.18)); }
+}
+
+/* 4) Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body, h1, .hero-heart, .heart-frame image, .heart-frame .heart-photo {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Footer styling */
+.footer {
+    background: #FF69B4;
+    color: #FFC9DE;
+    text-align: center;
+    padding: 15px 0;
+    position: static;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    font-size: 0.9em;
+    border-top: 3px solid #FFC9DE;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    margin-top: 110px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ===== Polaroid Garland styles (paste ke CSS sedia ada) ===== */
+:root{
+  --pg-bg: transparent;        /* optional bg untuk wrapper */
+  --pg-card: #fffafc;
+  --pg-accent: #ff8fc1;
+  --pg-glow: rgba(255,143,193,0.25);
+  --pg-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --pg-polaroid-w: 170px;
+}
+
+/* wrapper (sesuaikan selector ke container awak, contoh .garland) */
+.garland {
+  position: relative;
+  padding: 30px 20px 60px;
+  background: #F5E1E1;
+  border-radius: 14px;
+  box-shadow: var(--pg-shadow);
+  overflow: visible;
+}
+
+/* subtle curved string (SVG inline) */
+.garland::before {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 36px;
+  height: 100px;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="180" viewBox="0 0 2000 180"><path d="M0 90 C400 40 800 130 1200 90 C1600 50 2000 90 2000 90" stroke="%23c66b92" stroke-width="2" fill="none" stroke-linecap="round" stroke-opacity="0.45"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* horizontal rail for polaroids (scrollable) */
+.rail {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 80px 40px 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* card base */
+.polaroid {
+  width: var(--pg-polaroid-w);
+  min-width: var(--pg-polaroid-w);
+  background: #FFB8E6;
+  border-radius: 10px;
+  padding: 12px 12px 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  position: relative;
+  border: 1px solid rgba(107,52,80,0.04);
+  transform-origin: top center;
+  transition: transform .24s cubic-bezier(.2,.9,.2,1), box-shadow .24s, filter .24s;
+}
+
+/* fake hanging string from top of card */
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 28px;
+  background: linear-gradient(180deg, rgba(107,52,80,0.18), rgba(107,52,80,0.06));
+  border-radius: 1px;
+  z-index: 10;
+}
+
+/* little clip element */
+.clip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 16px;
+  border-radius: 4px;
+  background: linear-gradient(180deg,#f4c6d9,#eaa8c9);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: #6b3450;
+}
+
+/* image inside polaroid */
+.polaroid .photo {
+  width: 100%;
+  height: 140px;                /* adjust if perlu */
+  object-fit: cover;
+  border-radius: 6px;
+  border: 6px solid #fff;
+  box-shadow: 0 6px 14px var(--pg-glow);
+  background: #fff;
+  display: block;
+}
+
+/* caption text */
+.polaroid .caption {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b3450;
+}
+
+/* tilt classes — guna pada setiap polaroid untuk variasi */
+.polaroid.t1 { transform: rotate(-6deg); }
+.polaroid.t2 { transform: rotate(4deg); }
+.polaroid.t3 { transform: rotate(-3deg); }
+.polaroid.t4 { transform: rotate(5deg); }
+.polaroid.t5 { transform: rotate(-2deg); }
+
+/* hover elevate */
+.polaroid:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(107,52,80,0.14);
+  z-index: 30;
+  filter: saturate(1.05);
+}
+
+
+
+/* small scrollbar styling (optional) */
+.rail::-webkit-scrollbar { height: 8px; }
+.rail::-webkit-scrollbar-thumb { background: rgba(107,52,80,0.15); border-radius: 8px; }
+
+/* responsive tweak */
+@media (max-width: 640px) {
+  :root { --pg-polaroid-w: 140px; }
+  .garland::before { top: 40px; }
+  .rail { padding: 100px 20px 30px; }
+}

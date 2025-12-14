@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="FAVOURITE.css">
+  <title>HOMEPAGE</title>
+  <style>
+
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #FFC9DE;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #FFF8FF;
+}
+
+nav {
+  background: #FF69B4;
+  padding: 10px;
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 22px;
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 22px;
+  font-weight: bold;
+  transition: background 0.25s, color 0.25s;
+}
+
+nav > a:hover {
+    color:#FF69B4;
+    border-bottom:2px solid #FFB4A2;
+    text-shadow:0 0 8px #02010A;
+}
+
+.content {
+  animation: fadeUp 2s ease;
+  animation: floatTiny 3.6s ease-in-out infinite;
+}
+
+/* small floating sparkle animation for the whole hero */
+@keyframes floatTiny {
+  0% { transform: translateY(0) scale(1); opacity:0.92; }
+  50% { transform: translateY(-6px) scale(1.08); opacity:1; }
+  100% { transform: translateY(0) scale(1); opacity:0.92; }
+}
+
+/* responsive: stack on small screens */
+@media (max-width:900px){
+  .hero-card{
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 18px;
+  }
+  .hero-left { padding: 0; }
+  .hero-right { margin-top: 6px; }
+  .photo-frame { width: 210px; height: 300px; margin: 0 auto; }
+  .hero-title{ font-size: 28px; }
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+  50% { transform: translateY(-10px); filter: drop-shadow(0 0 18px rgba(255,170,240,0.8)); }
+  100% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+}
+
+.hero-heart { animation: floatGlow 5s ease-in-out infinite; }
+
+</style>
+
+</head>
+<body>
+  <h1>𓂃˖˳·˖ ִֶָ ⋆🌷͙⋆ ִֶָ˖·˳˖𓂃 ִֶָ𝓐𝓷𝓲𝓮𝓼'𝓼 𝓟𝓮𝓻𝓼𝓸𝓷𝓪𝓵 𝓦𝓮𝓫𝓼𝓲𝓽𝓮
+𓂃˖˳·˖ ִֶָ ⋆🌷͙⋆ ִֶָ˖·˳˖𓂃 ִֶָ</h1>
+
+  <nav>
+    <a href="INDEX.html">Home</a>
+    <a href="ABOUTME.html">About Me</a>
+    <a href="FAMILY.html">Family</a>
+    <a href="EDUCATION.html">Education</a>
+    <a href="EXPERIENCE.html">Experience</a>
+    <a href="FRIENDS.html">Friends</a>
+    <a href="FAVOURITE.html">Favourites</a>
+    <a href="GALLERY.html">Gallery</a>
+  </nav>
+
+  
+<!-- Cute Carousel — paste this in the <body> where you want the favourites carousel -->
+<section class="cute-carousel" aria-label="Favourite carousel">
+  <h2 class="cc-title">‧✈︎ 𝐓𝐡𝐞 𝐭𝐢𝐧𝐲 𝐣𝐨𝐲𝐬 𝐭𝐡𝐚𝐭 𝐜𝐨𝐥𝐨𝐮𝐫 𝐦𝐲 𝐝𝐚𝐲𝐬 𝐚𝐧𝐝 𝐰𝐚𝐫𝐦 𝐦𝐲 𝐡𝐞𝐚𝐫𝐭 ✈︎</h2>
+
+  <!-- Radio buttons (controls) -->
+  <input type="radio" name="cc" id="cc-1" checked>
+  <input type="radio" name="cc" id="cc-2">
+  <input type="radio" name="cc" id="cc-3">
+  <input type="radio" name="cc" id="cc-4">
+
+  <div class="cc-wrap">
+    <!-- Slides -->
+    <div class="cc-slide cc-1" aria-hidden="false">
+      <div class="cc-card">
+       <div class="cc-media">
+  <!-- gunakan path sebenar video awak -->
+  <video id="favVideo" src="riana.mp4" autoplay muted loop playsinline></video>
+
+  <!-- overlay unmute -->
+  <button class="video-unmute" id="videoUnmuteBtn" aria-label="Play with sound">
+    🔊 Tap to unmute
+  </button>
+</div>
+        <div class="cc-content">
+          <h3>𝐹𝒶𝓋𝑜𝓊𝓇𝒾𝓉𝑒 𝒮𝑜𝓃𝑔 ꨄ︎</h3>
+          <p class="fav-desc">♥ Ariana Granda~We can't be friends ft. Lyrics ♥</p> 
+          <ol class="fav-list">
+            
+          </ol>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="cc-slide cc-2" aria-hidden="true">
+      <div class="cc-card">
+        <div class="cc-media">
+          <img src="GRANDE.jpg" alt="𝐹𝒶𝓋𝑜𝓊𝓇𝒾𝓉𝑒 𝒜𝓇𝓉𝒾𝓈𝓉 ꨄ︎">
+        </div>
+        <div class="cc-content">
+          <h3>𝐹𝒶𝓋𝑜𝓊𝓇𝒾𝓉𝑒 𝒜𝓇𝓉𝒾𝓈𝓉 ꨄ︎</h3>
+          <p class="fav-desc">‪‪❤︎‬𝘈𝘳𝘪𝘢𝘯𝘢 𝘎𝘳𝘢𝘯𝘥𝘦’𝘴 𝘴𝘰𝘯𝘨𝘴 𝘵𝘦𝘭𝘭 𝘴𝘵𝘰𝘳𝘪𝘦𝘴 𝘰𝘧 𝘭𝘰𝘷𝘦, 𝘭𝘰𝘴𝘴, 𝘩𝘦𝘢𝘭𝘪𝘯𝘨, 𝘢𝘯𝘥 𝘴𝘦𝘭𝘧-𝘥𝘪𝘴𝘤𝘰𝘷𝘦𝘳𝘺, 𝘢𝘭𝘭𝘰𝘸𝘪𝘯𝘨 𝘭𝘪𝘴𝘵𝘦𝘯𝘦𝘳𝘴 𝘵𝘰 𝘧𝘦𝘦𝘭 𝘶𝘯𝘥𝘦𝘳𝘴𝘵𝘰𝘰𝘥 𝘵𝘩𝘳𝘰𝘶𝘨𝘩 𝘩𝘦𝘳 𝘩𝘰𝘯𝘦𝘴𝘵 𝘭𝘺𝘳𝘪𝘤𝘴 𝘢𝘯𝘥 𝘦𝘮𝘰𝘵𝘪𝘰𝘯𝘢𝘭 𝘮𝘦𝘭𝘰𝘥𝘪𝘦𝘴‪‪❤︎‬.</p>
+          <p class="small-muted">Top album: <em>Soft Evenings</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cc-slide cc-3" aria-hidden="true">
+      <div class="cc-card">
+        <div class="cc-media">
+          <img src="SUNSET.jpg" alt="𝐹𝒶𝓋𝑜𝓊𝓇𝒾𝓉𝑒 𝒮𝓊𝓃𝓈𝑒𝓉 ꨄ︎">
+        </div>
+        <div class="cc-content">
+          <h3>𝐹𝒶𝓋𝑜𝓊𝓇𝒾𝓉𝑒 𝒮𝓊𝓃𝓈𝑒𝓉 ꨄ︎</h3>
+          <p class="fav-desc">‪‪❤︎‬𝘚𝘰𝘮𝘦 𝘦𝘷𝘦𝘯𝘪𝘯𝘨𝘴 𝘢𝘳𝘳𝘪𝘷𝘦 𝘥𝘳𝘦𝘴𝘴𝘦𝘥 𝘪𝘯 𝘱𝘪𝘯𝘬 𝘢𝘯𝘥 𝘭𝘦𝘢𝘷𝘦 𝘺𝘰𝘶 𝘴𝘱𝘦𝘦𝘤𝘩𝘭𝘦𝘴𝘴.‪‪❤︎‬</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cc-slide cc-4" aria-hidden="true">
+      <div class="cc-card">
+        <div class="cc-media">
+          <img src="NAZIH.jpg" alt="𝓝𝔂𝓪𝓶𝓲 𝓟𝓲𝓷𝓴𝔂 ꨄ︎">
+        </div>
+        <div class="cc-content">
+          <h3>𝐹𝒶𝓋𝑜𝓊𝓇𝒾𝓉𝑒 𝒫𝑒𝓇𝓈𝑜𝓃 ꨄ︎</h3>
+          <p class="fav-desc">♥ 𝘚𝘰𝘮𝘦𝘰𝘯𝘦 𝘸𝘩𝘰 𝘮𝘢𝘬𝘦𝘴 𝘰𝘳𝘥𝘪𝘯𝘢𝘳𝘺 𝘥𝘢𝘺𝘴 𝘧𝘦𝘦𝘭 𝘤𝘰𝘻𝘺-𝘢𝘭𝘸𝘢𝘺𝘴 𝘴𝘶𝘱𝘱𝘰𝘳𝘵𝘪𝘷𝘦 ♥.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrows (labels tied to radio inputs) -->
+  <div class="cc-controls">
+    <label for="cc-1" class="cc-dot" aria-label="Show Music"></label>
+    <label for="cc-2" class="cc-dot" aria-label="Show Artist"></label>
+    <label for="cc-3" class="cc-dot" aria-label="Show Views"></label>
+    <label for="cc-4" class="cc-dot" aria-label="Show Person"></label>
+  </div>
+
+  <!-- Arrows -->
+<div class="cc-arrows">
+  <!-- From slide 1 -->
+  <label for="cc-4" class="cc-arrow prev cc-prev-1">‹</label>
+  <label for="cc-2" class="cc-arrow next cc-next-1">›</label>
+
+  <!-- From slide 2 -->
+  <label for="cc-1" class="cc-arrow prev cc-prev-2">‹</label>
+  <label for="cc-3" class="cc-arrow next cc-next-2">›</label>
+
+  <!-- From slide 3 -->
+  <label for="cc-2" class="cc-arrow prev cc-prev-3">‹</label>
+  <label for="cc-4" class="cc-arrow next cc-next-3">›</label>
+
+  <!-- From slide 4 -->
+  <label for="cc-3" class="cc-arrow prev cc-prev-4">‹</label>
+  <label for="cc-1" class="cc-arrow next cc-next-4">›</label>
+</div>
+</section>
+  
+</div>
+</main>
+
+  <footer class="footer">
+    <p>&copy; 2025 𝘾𝙧𝙖𝙛𝙩𝙚𝙙 𝙬𝙞𝙩𝙝 𝙨𝙤𝙛𝙩𝙣𝙚𝙨𝙨 𝙖𝙣𝙙 𝙡𝙞𝙩𝙩𝙡𝙚 𝙟𝙤𝙮𝙨 𝙗𝙮 𝙉𝙪𝙧 𝘼𝙣𝙞𝙚𝙨 𝘽𝙖𝙩𝙧𝙞𝙚𝙨𝙮𝙖 𝘽𝙩 𝙍𝙞𝙟𝙖𝙡 𝘼𝙗𝙙𝙪𝙡𝙡𝙖𝙝⋅˚₊‧ ୨୧ ‧₊˚ ⋅</p>
+    
+  </footer>
+
+</body>
+</html>

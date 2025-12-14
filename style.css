@@ -1,0 +1,412 @@
+/* --------------------------------------------------
+   GENERAL STYLING
+-------------------------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFC9DE;
+  margin: 0;
+  padding: 0;
+   animation: float 4s ease-in-out infinite;
+
+}
+
+
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #FFF8FF;
+   animation: float 4s ease-in-out infinite;
+
+}
+
+/* --------------------------------------------------
+   NAVIGATION
+-------------------------------------------------- */
+nav {
+  background: #FF69B4;
+  padding: 10px;
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 22px;
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 22px;
+  font-weight: bold;
+  transition: background 0.25s, color 0.25s;
+}
+
+nav > a:hover {
+    color:#FF69B4;
+    border-bottom:2px solid #FFB4A2;
+    text-shadow:0 0 8px #02010A;
+}
+
+/* Cute Pastel Hero Section (Option A) */
+
+/* --- overall hero container --- */
+.cute-pastel-hero{
+  position: relative;
+  padding: 48px 20px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #f8e9f2 0%, #efe1f9 40%, #f3e8ff 100%);
+  overflow: hidden;
+}
+
+/* subtle decorative blurred shapes behind */
+.cute-pastel-hero .hero-bg-decor{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 250px at 10% 10%, rgba(255,200,240,0.12), transparent 12%),
+    radial-gradient(500px 300px at 90% 80%, rgba(200,180,255,0.10), transparent 12%);
+  pointer-events: none;
+  filter: blur(18px);
+}
+
+/* the centered card */
+.hero-card{
+  width: min(1100px, 94%);
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: center;
+  padding: 34px;
+  border-radius: 20px;
+  background: #FFB8E5
+;
+  box-shadow:
+    0 8px 30px rgba(120,40,140,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* left column text */
+.hero-left { padding-right: 8px; text-align: left; }
+
+.hero-title{
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #FF5CC3;
+  font-size: 34px;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.6px;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.9),
+        0 0 18px rgba(255,255,255,0.7),
+        0 0 28px rgba(255,200,255,0.5),
+        0 0 40px rgba(255,180,240,0.4);
+
+}
+
+/* sparkles row */
+.hero-sparkles{
+  color: #ffcee9;
+  font-size: 14px;
+  margin-bottom: 12px;
+  display: inline-block;
+  opacity: 0.95;
+}
+.hero-sparkles span{
+  margin-right: 8px;
+  display:inline-block;
+  transform-origin:center;
+  animation: floatTiny 3.6s ease-in-out infinite;
+}
+.hero-sparkles span:nth-child(2){ animation-delay: 0.4s; }
+.hero-sparkles span:nth-child(3){ animation-delay: 0.9s; }
+
+/* subtitle */
+.hero-sub{
+  color: #54325b;
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* small link under subtitle */
+.muted-link {
+  color: #8b3aa8;
+  text-decoration: underline dotted;
+  font-style: italic;
+}
+.muted-link:hover { color: #b85bd0; }
+
+/* right column photo frame */
+.hero-right { display:flex; justify-content:center; align-items:center; }
+
+.photo-frame{
+  width: 260px;
+  height: 500px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  box-shadow:
+     0 18px 40px rgba(160,70,180,0.12),
+     inset 0 0 18px rgba(255,220,255,0.06);
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  transform: translateY(0);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display:block;
+}
+
+/* sticky tape decorative */
+.sticky-tape{
+  position:absolute;
+  width:56px;
+  height:16px;
+  background: linear-gradient(90deg,#fff6f9,#ffdff4);
+  border-radius:4px;
+  transform: rotate(-6deg);
+  top:8px;
+  left:12px;
+  opacity:0.95;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+.sticky-tape.top-right{ right:12px; left:auto; transform: rotate(6deg); }
+
+/* hover effect */
+.photo-frame:hover{
+  transform: translateY(-6px);
+  box-shadow:
+   0 26px 60px rgba(160,70,180,0.18),
+   inset 0 0 22px rgba(255,220,255,0.08);
+}
+
+/* small floating sparkle animation for the whole hero */
+@keyframes floatTiny {
+  0% { transform: translateY(0) scale(1); opacity:0.92; }
+  50% { transform: translateY(-6px) scale(1.08); opacity:1; }
+  100% { transform: translateY(0) scale(1); opacity:0.92; }
+}
+
+/* responsive: stack on small screens */
+@media (max-width:900px){
+  .hero-card{
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 18px;
+  }
+  .hero-left { padding: 0; }
+  .hero-right { margin-top: 6px; }
+  .photo-frame { width: 210px; height: 300px; margin: 0 auto; }
+  .hero-title{ font-size: 28px; }
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+  50% { transform: translateY(-10px); filter: drop-shadow(0 0 18px rgba(255,170,240,0.8)); }
+  100% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+}
+
+.hero-heart { animation: floatGlow 5s ease-in-out infinite; }
+
+/* ===== Add these fixes ===== */
+
+/* 1) Define float keyframes (dipanggil oleh body & h1) */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* 2) Remove duplicate .hero-heart rules conflict by defining once */
+.hero-heart {
+  position: absolute;
+  right: 60px;
+  top: 40px;
+  width: 220px;
+  height: 220px;
+  display: block;
+  transform-origin: center;
+  z-index: 8;
+  pointer-events: none;
+  /* combine movement + glow as two animations (names must exist) */
+  animation: floatHeart 6s ease-in-out infinite,
+             floatGlow 5s ease-in-out infinite;
+}
+
+/* Ensure floatGlow exists (you have it already) - kept for completeness */
+@keyframes floatGlow {
+  0%  { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+  50% { transform: translateY(-10px); filter: drop-shadow(0 0 18px rgba(255,170,240,0.8)); }
+  100%{ transform: translateY(0); filter: drop-shadow(0 0 8px rgba(255,150,220,0.4)); }
+}
+
+/* Ensure floatHeart exists (you had floatHeart defined already; keep it) */
+@keyframes floatHeart {
+  0%   { transform: translateY(0) rotate(-2deg) scale(1); }
+  50%  { transform: translateY(-8px) rotate(2deg) scale(1.02); }
+  100% { transform: translateY(0) rotate(-2deg) scale(1); }
+}
+
+/* 3) Optional: if using an <image> inside SVG, target explicitly for animation */
+.heart-frame image,
+.heart-frame .heart-photo {
+  animation: heartFloat 6s ease-in-out infinite,
+             heartPulseGlow 3.8s ease-in-out infinite;
+}
+
+/* define the heart animations if not already present */
+@keyframes heartFloat {
+  0%   { transform: translateY(0) scale(1) rotate(0deg); }
+  50%  { transform: translateY(-8px) scale(1.02) rotate(1deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes heartPulseGlow {
+  0% { filter: drop-shadow(0 8px 18px rgba(255,130,180,0.18)); }
+  50% { filter: drop-shadow(0 20px 38px rgba(255,140,190,0.46)); }
+  100% { filter: drop-shadow(0 8px 18px rgba(255,130,180,0.18)); }
+}
+
+/* 4) Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body, h1, .hero-heart, .heart-frame image, .heart-frame .heart-photo {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Footer styling */
+.footer {
+    background: #FF69B4;
+    color: #FFC9DE;
+    text-align: center;
+    padding: 15px 0;
+    position: static;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    font-size: 0.9em;
+    border-top: 3px solid #FFC9DE;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    margin-top: 110px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* wrapper untuk pastikan heart beratur dan tak keluar */
+.heart-wrap {
+  display: flex;
+  flex-direction: column;   /* column untuk atas/bawah; tukar ke row untuk sebelah-menyebelah */
+  gap: 28px;                /* jarak antara hati atas & bawah */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;       /* laraskan ikut layout hero */
+  margin: 0 auto;
+  padding: 18px 12px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: visible;       /* kalau blur besar, tukar ke hidden jika nak clip */
+}
+
+/* heart-frame yang stabil (relative bukan absolute) */
+.heart-frame {
+  width: 280px;
+  max-width: 42vw;
+  position: relative;      /* agar .tape absolute merujuk kepada sini */
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 8px 22px rgba(0,0,0,0.28));
+}
+
+/* SVG responsive */
+.heart-svg { width: 100%; height: auto; display:block; }
+
+/* glow belakang (buah hati) */
+.heart-back-glow {
+  fill: rgba(255,150,200,0.12);
+  filter: blur(18px);
+  transition: transform .5s ease, opacity .4s ease;
+  transform-origin: center;
+}
+
+/* hover effect kecil only (jgn besar supaya tak pindahkan posisi) */
+.heart-frame:hover .heart-back-glow { transform: scale(1.04); }
+
+/* heart stroke */
+.heart-stroke { stroke: rgba(255,180,210,0.6); stroke-linejoin:round; }
+
+/* pastikan hero parent ada position:relative */
+.hero-section { position: relative; }
+
+/* HERO HEART */
+.hero-heart {
+  position: absolute;
+  right: 60px;       /* ubah ikut layout awak (left/right/top) */
+  top: 40px;
+  width: 220px;
+  height: 220px;
+  display: block;
+  transform-origin: center;
+  z-index: 8;
+  pointer-events: none; /* bukan clickable; ubah kalau nak clickable */
+  animation: floatHeart 6s ease-in-out infinite;
+}
+
+/* size responsive */
+@media (max-width: 900px) {
+  .hero-heart { right: 20px; top: 20px; width: 160px; height: 160px; }
+}
+
+/* svg full width */
+.hero-heart .heart-svg { width: 100%; height: 100%; }
+
+/* pink soft glow background behind svg (outer) */
+.hero-heart::before{
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 28px;
+  background: radial-gradient(closest-side, rgba(255,180,210,0.26), rgba(120,50,120,0));
+  filter: blur(14px);
+  z-index: -1;
+}
+
+/* tape accents */
+.tape {
+  position: absolute;
+  width: 44px;
+  height: 14px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,250,240,0.6));
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  transform: rotate(-12deg);
+  left: 50%;
+  top: -8px;
+  margin-left: -22px;
+  opacity: 0.95;
+  z-index: 9;
+}
+.tape.tape-left { left: 10px; top: 6px; transform: rotate(-16deg); }
+.tape.tape-right { right: 10px; left: auto; top: 6px; transform: rotate(16deg); }
+
+/* subtle float animation */
+@keyframes floatHeart {
+  0% { transform: translateY(0) rotate(-2deg) scale(1); }
+  50% { transform: translateY(-8px) rotate(2deg) scale(1.02); }
+  100% { transform: translateY(0) rotate(-2deg) scale(1); }
+}
